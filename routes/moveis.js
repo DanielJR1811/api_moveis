@@ -2,216 +2,36 @@ const express = require('express');
 const router = express.Router();
 
 let moveis = [
-  {
-    "id": 1,
-    "nome": "M\u00f3vel 1",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 1",
-    "preco": 1000,
-    "quantidadeEstoque": 5
-  },
-  {
-    "id": 2,
-    "nome": "M\u00f3vel 2",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 2",
-    "preco": 1100,
-    "quantidadeEstoque": 6
-  },
-  {
-    "id": 3,
-    "nome": "M\u00f3vel 3",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 3",
-    "preco": 1200,
-    "quantidadeEstoque": 7
-  },
-  {
-    "id": 4,
-    "nome": "M\u00f3vel 4",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 4",
-    "preco": 1300,
-    "quantidadeEstoque": 8
-  },
-  {
-    "id": 5,
-    "nome": "M\u00f3vel 5",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 5",
-    "preco": 1400,
-    "quantidadeEstoque": 9
-  },
-  {
-    "id": 6,
-    "nome": "M\u00f3vel 6",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 6",
-    "preco": 1500,
-    "quantidadeEstoque": 10
-  },
-  {
-    "id": 7,
-    "nome": "M\u00f3vel 7",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 7",
-    "preco": 1600,
-    "quantidadeEstoque": 11
-  },
-  {
-    "id": 8,
-    "nome": "M\u00f3vel 8",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 8",
-    "preco": 1700,
-    "quantidadeEstoque": 12
-  },
-  {
-    "id": 9,
-    "nome": "M\u00f3vel 9",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 9",
-    "preco": 1800,
-    "quantidadeEstoque": 13
-  },
-  {
-    "id": 10,
-    "nome": "M\u00f3vel 10",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 10",
-    "preco": 1900,
-    "quantidadeEstoque": 14
-  },
-  {
-    "id": 11,
-    "nome": "M\u00f3vel 11",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 11",
-    "preco": 2000,
-    "quantidadeEstoque": 15
-  },
-  {
-    "id": 12,
-    "nome": "M\u00f3vel 12",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 12",
-    "preco": 2100,
-    "quantidadeEstoque": 16
-  },
-  {
-    "id": 13,
-    "nome": "M\u00f3vel 13",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 13",
-    "preco": 2200,
-    "quantidadeEstoque": 17
-  },
-  {
-    "id": 14,
-    "nome": "M\u00f3vel 14",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 14",
-    "preco": 2300,
-    "quantidadeEstoque": 18
-  },
-  {
-    "id": 15,
-    "nome": "M\u00f3vel 15",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 15",
-    "preco": 2400,
-    "quantidadeEstoque": 19
-  },
-  {
-    "id": 16,
-    "nome": "M\u00f3vel 16",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 16",
-    "preco": 2500,
-    "quantidadeEstoque": 20
-  },
-  {
-    "id": 17,
-    "nome": "M\u00f3vel 17",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 17",
-    "preco": 2600,
-    "quantidadeEstoque": 21
-  },
-  {
-    "id": 18,
-    "nome": "M\u00f3vel 18",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 18",
-    "preco": 2700,
-    "quantidadeEstoque": 22
-  },
-  {
-    "id": 19,
-    "nome": "M\u00f3vel 19",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 19",
-    "preco": 2800,
-    "quantidadeEstoque": 23
-  },
-  {
-    "id": 20,
-    "nome": "M\u00f3vel 20",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 20",
-    "preco": 2900,
-    "quantidadeEstoque": 24
-  },
-  {
-    "id": 21,
-    "nome": "M\u00f3vel 21",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 21",
-    "preco": 3000,
-    "quantidadeEstoque": 25
-  },
-  {
-    "id": 22,
-    "nome": "M\u00f3vel 22",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 22",
-    "preco": 3100,
-    "quantidadeEstoque": 26
-  },
-  {
-    "id": 23,
-    "nome": "M\u00f3vel 23",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 23",
-    "preco": 3200,
-    "quantidadeEstoque": 27
-  },
-  {
-    "id": 24,
-    "nome": "M\u00f3vel 24",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 24",
-    "preco": 3300,
-    "quantidadeEstoque": 28
-  },
-  {
-    "id": 25,
-    "nome": "M\u00f3vel 25",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 25",
-    "preco": 3400,
-    "quantidadeEstoque": 29
-  },
-  {
-    "id": 26,
-    "nome": "M\u00f3vel 26",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 26",
-    "preco": 3500,
-    "quantidadeEstoque": 30
-  },
-  {
-    "id": 27,
-    "nome": "M\u00f3vel 27",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 27",
-    "preco": 3600,
-    "quantidadeEstoque": 31
-  },
-  {
-    "id": 28,
-    "nome": "M\u00f3vel 28",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 28",
-    "preco": 3700,
-    "quantidadeEstoque": 32
-  },
-  {
-    "id": 29,
-    "nome": "M\u00f3vel 29",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 29",
-    "preco": 3800,
-    "quantidadeEstoque": 33
-  },
-  {
-    "id": 30,
-    "nome": "M\u00f3vel 30",
-    "descricao": "Descri\u00e7\u00e3o do m\u00f3vel 30",
-    "preco": 3900,
-    "quantidadeEstoque": 34
-  }
+  { id: 1, nome: "Sofá Retrátil 3 Lugares", descricao: "Sofá confortável com tecido suede e estrutura reforçada.", preco: 2000, quantidadeEstoque: 5 },
+  { id: 2, nome: "Mesa de Jantar 6 Cadeiras", descricao: "Mesa de madeira maciça com tampo de vidro.", preco: 3000, quantidadeEstoque: 6 },
+  { id: 3, nome: "Cama Box Queen Size", descricao: "Cama com base e colchão de molas ensacadas.", preco: 2500, quantidadeEstoque: 7 },
+  { id: 4, nome: "Guarda-Roupa 6 Portas", descricao: "Guarda-roupa com espelho e espaço interno amplo.", preco: 1800, quantidadeEstoque: 8 },
+  { id: 5, nome: "Rack para TV até 65\"", descricao: "Rack com nichos para eletrônicos e decoração.", preco: 900, quantidadeEstoque: 9 },
+  { id: 6, nome: "Poltrona Reclinável", descricao: "Poltrona com revestimento em couro sintético.", preco: 1200, quantidadeEstoque: 10 },
+  { id: 7, nome: "Cadeira de Escritório", descricao: "Cadeira ergonômica com regulagem de altura.", preco: 800, quantidadeEstoque: 11 },
+  { id: 8, nome: "Mesa de Centro", descricao: "Mesa de centro em MDF com acabamento laqueado.", preco: 600, quantidadeEstoque: 12 },
+  { id: 9, nome: "Estante de Livros", descricao: "Estante com 5 prateleiras em madeira pinus.", preco: 700, quantidadeEstoque: 13 },
+  { id: 10, nome: "Painel para TV", descricao: "Painel suspenso para TV de até 60\".", preco: 1000, quantidadeEstoque: 14 },
+  { id: 11, nome: "Cômoda 4 Gavetas", descricao: "Cômoda com puxadores em alumínio e corrediças metálicas.", preco: 850, quantidadeEstoque: 15 },
+  { id: 12, nome: "Balcão de Cozinha", descricao: "Balcão com 3 portas e espaço para forno.", preco: 1100, quantidadeEstoque: 16 },
+  { id: 13, nome: "Mesa de Escritório", descricao: "Mesa com tampo amplo e suporte para teclado.", preco: 950, quantidadeEstoque: 17 },
+  { id: 14, nome: "Cabeceira Estofada Queen", descricao: "Cabeceira com acabamento em tecido suede cinza.", preco: 700, quantidadeEstoque: 18 },
+  { id: 15, nome: "Armário Multiuso", descricao: "Armário com prateleiras internas e portas com puxadores.", preco: 1300, quantidadeEstoque: 19 },
+  { id: 16, nome: "Cristaleira de Vidro", descricao: "Cristaleira com portas de vidro e iluminação LED.", preco: 1600, quantidadeEstoque: 20 },
+  { id: 17, nome: "Sapateira 2 Portas", descricao: "Sapateira compacta com espaço para até 20 pares.", preco: 650, quantidadeEstoque: 21 },
+  { id: 18, nome: "Mesa Lateral", descricao: "Mesa lateral redonda com pés palito.", preco: 400, quantidadeEstoque: 22 },
+  { id: 19, nome: "Beliche Infantil", descricao: "Beliche em MDF com escada lateral e proteção de queda.", preco: 1700, quantidadeEstoque: 23 },
+  { id: 20, nome: "Bancada de Estudo", descricao: "Bancada com prateleiras para livros e material escolar.", preco: 950, quantidadeEstoque: 24 },
+  { id: 21, nome: "Colchão Casal Espuma D33", descricao: "Colchão firme com tratamento antiácaro.", preco: 1000, quantidadeEstoque: 25 },
+  { id: 22, nome: "Mesa Bistrô Alta", descricao: "Mesa alta com tampo redondo, ideal para ambientes pequenos.", preco: 750, quantidadeEstoque: 26 },
+  { id: 23, nome: "Cadeira de Madeira", descricao: "Cadeira tradicional com encosto anatômico.", preco: 450, quantidadeEstoque: 27 },
+  { id: 24, nome: "Puff Baú", descricao: "Puff estofado com espaço interno para armazenamento.", preco: 500, quantidadeEstoque: 28 },
+  { id: 25, nome: "Buffet 3 Portas", descricao: "Buffet com tampo amplo e prateleiras internas.", preco: 1400, quantidadeEstoque: 29 },
+  { id: 26, nome: "Espelho de Parede", descricao: "Espelho decorativo com moldura de madeira.", preco: 600, quantidadeEstoque: 30 },
+  { id: 27, nome: "Mesa de Cabeceira", descricao: "Mesa com 2 gavetas e acabamento em laca.", preco: 550, quantidadeEstoque: 31 },
+  { id: 28, nome: "Painel Home Theater", descricao: "Painel com suporte para TV e espaço para som.", preco: 1900, quantidadeEstoque: 32 },
+  { id: 29, nome: "Berço com Grade Regulável", descricao: "Berço branco com rodízios e regulagem de altura.", preco: 1500, quantidadeEstoque: 33 },
+  { id: 30, nome: "Armário Aéreo de Cozinha", descricao: "Armário com 3 portas basculantes e acabamento branco.", preco: 850, quantidadeEstoque: 34 }
 ];
 
 // GET - Listar todos os móveis
